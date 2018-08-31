@@ -14,8 +14,8 @@ def main():
     print("X | Y = {}".format(x | y))
     print("X & Y = {}".format(x & y))
     print("X - Y = {}".format(x ^ y))
-    print("Is 'se' in X? - {}".format(""))
-    print("Is 'se' in Y? - {}".format(if ''))
+    print("Is 'se' in X? - {}".format(("s", "e") in x))
+    print("Is 'se' in Y? - {}".format(("s", "e") in y))
 
 
 if __name__ == '__main__':
