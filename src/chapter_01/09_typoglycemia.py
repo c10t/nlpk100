@@ -19,7 +19,6 @@ def typoglycemia(phrase, seed=0):
 
 
 def main():
-    print(typoglycemia("Test helloworld"))
     print(typoglycemia("I couldn't believe that I could actually understand what I was reading : \
     the phenomenal power of the human mind ."))
 
