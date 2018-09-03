@@ -5,6 +5,8 @@ import re
 
 def main():
     file_path = './resource/uk.txt'
+
+    # intend to extract [[Category: ... ]] or [[Category: ... | ... ]]
     pattern = re.compile(r'^\[\[Category:(.*?)(\|.*)?\]\]$')
 
     with open(file_path, encoding='utf-8') as uk:
