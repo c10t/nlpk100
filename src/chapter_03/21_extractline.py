@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import gzip
-import json
-
 def main():
     file_path = './resource/uk.txt'
 
