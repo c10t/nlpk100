@@ -4,9 +4,7 @@
 import re
 
 
-def main():
-    file_path = './resource/uk.txt'
-
+def extract_basic_info(file_path):
     pattern_basic_info_block = re.compile(r'{{基礎情報.*?$')
     pattern_end_block = re.compile(r'^\}\}$')
     pattern_template = re.compile(r'^\|(.*?)\s=\s(.*)')
@@ -41,9 +39,27 @@ def main():
             if basic_info_block_is_found:
                 basic_info_block_started = True
 
+    return basic_info
 
-    for k in basic_info.keys():
-        print(f"'{k}': '{basic_info[k]}'")
+
+def remove_emphasize_markup(basic_info_dict):
+    removed = basic_info_dict
+
+    p = re.compile("'{2,5}")
+
+    for key in removed.keys():
+        removed[key] = p.sub(r"", removed[key])
+
+    return removed
+
+
+def main():
+    file_path = './resource/uk.txt'
+    info = extract_basic_info(file_path)
+    r = remove_emphasize_markup(info)
+    for key in r.keys():
+        print(f"{key}: {r[key]}")
+
 
 if __name__ == '__main__':
     main()

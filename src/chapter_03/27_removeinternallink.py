@@ -4,9 +4,7 @@
 import re
 
 
-def main():
-    file_path = './resource/uk.txt'
-
+def extract_basic_info(file_path):
     pattern_basic_info_block = re.compile(r'{{基礎情報.*?$')
     pattern_end_block = re.compile(r'^\}\}$')
     pattern_template = re.compile(r'^\|(.*?)\s=\s(.*)')
@@ -41,9 +39,31 @@ def main():
             if basic_info_block_is_found:
                 basic_info_block_started = True
 
+    return basic_info
 
-    for k in basic_info.keys():
-        print(f"'{k}': '{basic_info[k]}'")
+
+def main():
+    file_path = './resource/uk.txt'
+    info = extract_basic_info(file_path)
+
+    pattern_emphasis = re.compile(r"'{2,5}")
+    pattern_internal_link = re.compile(r"\[{2}([^\[\]]*)\]{2}")
+    pattern_has_represent = re.compile(r"(.*)\|(.*)")
+
+    for key in info.keys():
+        info[key] = pattern_emphasis.sub(r"", info[key])
+
+        link = pattern_internal_link.finditer(info[key])
+        for li in link:
+            info[key] = info[key].replace(li.group(0), li.group(1))
+            # print(f"...has internal link: {li.group(0)} -> {li.group(1)}")
+            has_repr = pattern_has_represent.search(li.group(1))
+            if has_repr:
+                # print(f"...use article name: {has_repr.group(0)} -> {has_repr.group(1)}")
+                info[key] = info[key].replace(has_repr.group(0), has_repr.group(1))
+
+        print(f"{key}: {info[key]}")
+
 
 if __name__ == '__main__':
     main()
