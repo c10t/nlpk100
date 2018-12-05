@@ -10,10 +10,10 @@ def split_to_sentences(line):
         sentence += line[i]
         if line[i] in eos:
             if len(line) <= i + 2:
-                sentences.append(sentence.lstrip())
+                sentences.append(sentence.strip())
                 break
             if line[i + 1] == " " and line[i + 2].isupper():
-                sentences.append(sentence.lstrip())
+                sentences.append(sentence.strip())
                 sentence = ""
 
     return sentences
@@ -26,7 +26,7 @@ def main():
         for line in nlp.readlines():
             if len(line.strip()) < 2:
                 continue
-            for s in split_to_sentences(line):
+            for s in split_to_sentences(line.strip()):
                 print(s)
 
 
