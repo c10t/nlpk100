@@ -2,10 +2,11 @@ version: "3.0"
 
 services:
   pyapp:
-    image: "python:3.7-alpine"
-    tty: true
+    build:
+      context: ./code
+      dockerfile: Dockerfile
     ports:
-      - "4989:4989"
+      - "8000:8000"
     volumes:
       - "./code:/home/code"
   myredis:
