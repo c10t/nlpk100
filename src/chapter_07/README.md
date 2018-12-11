@@ -31,3 +31,16 @@ and setting the protected mode option to 'no', and then restarting the server.
 NOTE: You only need to do one of the above things in order for the server 
 to start accepting connections from the outside.
 ```
+
+### with "--protected-mode no"
+
+=> OK
+
+## redis-cli
+
+`$ redis-cli -h myredis -p 6379`
+
+## Bulk Insert
+
+- [Redis Mass Insertion](https://redis.io/topics/mass-insert)
+- [How to insert Billion of data to Redis efficiently?](https://stackoverflow.com/questions/32149626/how-to-insert-billion-of-data-to-redis-efficiently)

@@ -9,6 +9,7 @@ services:
       - "8000:8000"
     volumes:
       - "./code:/home/code"
+      - "./resources:/home/resources"
   myredis:
     build:
       context: ./kvs
