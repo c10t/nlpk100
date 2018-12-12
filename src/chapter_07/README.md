@@ -44,3 +44,11 @@ to start accepting connections from the outside.
 
 - [Redis Mass Insertion](https://redis.io/topics/mass-insert)
 - [How to insert Billion of data to Redis efficiently?](https://stackoverflow.com/questions/32149626/how-to-insert-billion-of-data-to-redis-efficiently)
+
+`$ cat ../resources/namelist.txt | redis-cli --pipe -h myredis -p 6379` not worked
+
+```
+Error writing to the server: Connection reset by peer
+```
+
+- So are these file too large?
