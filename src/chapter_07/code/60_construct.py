@@ -1,8 +1,8 @@
 import json
+from pathlib import Path
 
-ARTIST_PATH = "../resources/artist.json"
-NAMELIST_PATH = "../resources/namelist.txt"
-NAME_TO_AREA_PATH = "../resources/name-area.txt"
+RESOURCES_PATH = Path.cwd().parent/"resources"
+ARTIST_PATH = RESOURCES_PATH/"artist.json"
 
 
 def dict_to_line_set(d):
@@ -25,19 +25,21 @@ def dict_to_namelist(d):
 def main():
     print("Reading JSON file...")
 
-    count = 0
-    with open(ARTIST_PATH, encoding="utf8") as f,\
-        open(NAMELIST_PATH, mode='a', encoding='utf8', newline="\r\n") as g, \
-        open(NAME_TO_AREA_PATH, mode='a', encoding='utf8', newline="\r\n") as h:
-        for line in f:
-            # if count > 10:
-            #    break
-            j = json.loads(line)
-            g.write(dict_to_namelist(j) + '\n')
-            h.write(dict_to_line_set(j) + '\n')
-            count += 1
-            if count % 100000 == 0:
-                print(f"Processed {count} lines...")
+    with ARTIST_PATH.open(encoding="utf8") as f:
+        count = 0
+        namelist = "namelist-001.txt"
+        namearea = "namearea-001.txt"
+        with (RESOURCES_PATH / namelist).open(mode='a', encoding='utf8', newline="\r\n") as g, \
+            (RESOURCES_PATH / namearea).open(mode='a', encoding='utf8', newline="\r\n") as h:
+            for line in f:
+                if count > 10:
+                    break
+                j = json.loads(line)
+                g.write(dict_to_namelist(j) + '\n')
+                h.write(dict_to_line_set(j) + '\n')
+                count += 1
+                if count % 100000 == 0:
+                    print(f"Processed {count} lines...")
 
     print(f"Finished with {count} lines")
 
