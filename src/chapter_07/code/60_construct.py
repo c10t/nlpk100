@@ -27,8 +27,8 @@ def main():
     with ARTIST_PATH.open(encoding="utf8") as f:
         count = 0
         page = 1
-        namelist = "namelist-{}.txt".format(str(page).zfill(3))
-        name_area = "name-to-area-{}.txt".format(str(page).zfill(3))
+        namelist = "namelist-{}.txt".format(str(page).zfill(4))
+        name_area = "name-to-area-{}.txt".format(str(page).zfill(4))
         chunk = []
 
         for line in f:
@@ -45,8 +45,8 @@ def main():
                 io_write_chunk(RESOURCES_PATH / namelist, RESOURCES_PATH / name_area, chunk)
                 chunk = []
                 page += 1
-                namelist = "namelist-{}.txt".format(str(page).zfill(3))
-                name_area = "name-to-area-{}.txt".format(str(page).zfill(3))
+                namelist = "namelist-{}.txt".format(str(page).zfill(4))
+                name_area = "name-to-area-{}.txt".format(str(page).zfill(4))
                 print(f"Processed {count} lines...")
 
         # write residue

@@ -45,13 +45,23 @@ to start accepting connections from the outside.
 - [Redis Mass Insertion](https://redis.io/topics/mass-insert)
 - [How to insert Billion of data to Redis efficiently?](https://stackoverflow.com/questions/32149626/how-to-insert-billion-of-data-to-redis-efficiently)
 
-`$ cat ../resources/namelist.txt | redis-cli --pipe -h myredis -p 6379` not worked
+- with 920000 lines `$ cat ../resources/namelist.txt | redis-cli --pipe -h myredis -p 6379` not worked
 
 ```
 Error writing to the server: Connection reset by peer
 ```
 
+- with 11 lines `$ cat ../resources/namearea-001.txt | redis-cli --pipe -h myredis -p 6379` works
+
+```
+All data transferred. Waiting for the last reply...
+Last reply received from server.
+errors: 0, replies: 11
+```
+
 - So are these file too large?
+  + :x: for 1000 lines,  :o: for 500 lines
+  + and too slow
 
 ## Read It Later
 
