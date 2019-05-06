@@ -3,6 +3,6 @@ services:
   jupyter:
     image: jupyter/datascience-notebook:latest
     ports: 
-      - "7288:8888"
+      - "8888:8888"
     volumes:
       - ./src:/home/jovyan/work

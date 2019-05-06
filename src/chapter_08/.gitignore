@@ -1,2 +1,5 @@
 /resources/*
 !.gitkeep
+
+*.ipynb
+*.ipynb_checkpoints

@@ -7,5 +7,5 @@
 FILE='rt-polaritydata.tar.gz'
 URL="http://www.cs.cornell.edu/people/pabo/movie-review-data/${FILE}"
 
-wget ${URL}
-tar zxvf ${FILE}
+wget ${URL} -P ./resources
+tar zxvf ./resources/${FILE} -C ./resources
