@@ -1,9 +1,11 @@
 {
   "name": "nlp69",
   "scripts": {
-    "dev": "nuxt"
+    "dev": "nuxt",
+    "download": "node scripts/download.js"
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "express": "^4.17.1",
     "nuxt": "^2.8.1",
     "ts-node": "^8.2.0",

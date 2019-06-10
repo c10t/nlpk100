@@ -1,4 +1,7 @@
 package-lock.json
 
+/data/*
+!.gitkeep
+
 node_modules
 .nuxt
