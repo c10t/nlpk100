@@ -4,6 +4,11 @@
     "dev": "nuxt"
   },
   "dependencies": {
-    "nuxt": "^2.8.1"
+    "nuxt": "^2.8.1",
+    "ts-node": "^8.2.0",
+    "vue-property-decorator": "^8.1.1"
+  },
+  "devDependencies": {
+    "@nuxt/typescript": "^2.8.1"
   }
 }
