@@ -2,7 +2,7 @@
   "name": "nlp69",
   "scripts": {
     "dev": "nuxt",
-    "download": "node scripts/download.js"
+    "download": "ts-node scripts/download.ts"
   },
   "dependencies": {
     "axios": "^0.19.0",
