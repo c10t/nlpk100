@@ -1,0 +1,6 @@
+{
+  "name": "nlp69",
+  "scripts": {
+    "dev": "nuxt"
+  }
+}
