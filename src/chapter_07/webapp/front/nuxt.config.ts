@@ -14,7 +14,15 @@ const config: NuxtConfiguration = {
   ],
   modules: [
     '@nuxtjs/vuetify'
-  ]
+  ],
+  vuetify: {
+    theme: {
+      primary: '#f23567',
+      secondary: '#02eea3',
+      accent: '#ee02c3',
+      error: '#ee2d02'
+    }
+  }
 }
 
 export default config

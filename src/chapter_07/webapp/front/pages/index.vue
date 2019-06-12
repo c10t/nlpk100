@@ -1,6 +1,7 @@
 <template>
   <v-app>
     <v-content>
+      <Appbar/>
       <v-container>Hello, Vuetify!</v-container>
     </v-content>
   </v-app>
