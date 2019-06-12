@@ -11,6 +11,9 @@ const config: NuxtConfiguration = {
   },
   serverMiddleware: [
     { path: '/api', handler: '@/server/api/index.ts' }
+  ],
+  modules: [
+    '@nuxtjs/vuetify'
   ]
 }
 

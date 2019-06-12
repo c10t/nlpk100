@@ -1,3 +1,9 @@
 <template>
-  <h1>Hello, World!</h1>
+  <v-app>
+    <v-content>
+      <v-container>
+        Hello, Vuetify!
+      </v-container>
+    </v-content>
+  </v-app>
 </template>

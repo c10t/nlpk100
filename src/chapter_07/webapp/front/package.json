@@ -5,6 +5,7 @@
     "download": "ts-node scripts/download.ts"
   },
   "dependencies": {
+    "@nuxtjs/vuetify": "^0.5.6",
     "axios": "^0.19.0",
     "express": "^4.17.1",
     "nuxt": "^2.8.1",
