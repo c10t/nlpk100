@@ -7,7 +7,7 @@ export const sampleArtist: Artist = {
   aliases: [{ name: 'オアシス', sort_name: 'オアシス' }],
   begin: { year: 1991 },
   end: { year: 2009, month: 8, date: 28 },
-  tags: [{ count: 1, value: 'rock' }],
+  tags: [{ count: 13, value: 'rock' }, { count: 2, value: 'pop' }],
   rating: { count: 13, value: 86 }
 }
 

@@ -6,7 +6,18 @@
       <td>{{ props.item.aliases }}</td>
       <td>{{ props.item.begin }}</td>
       <td>{{ props.item.end }}</td>
-      <td>{{ props.item.tags }}</td>
+      <td>
+        <v-chip
+          small
+          color="green"
+          text-color="white"
+          v-for="tag in props.item.tags"
+          v-bind:key="tag.value"
+        >
+          <v-avatar class="green darken-4">{{ tag.count }}</v-avatar>
+          {{ tag.value }}
+        </v-chip>
+      </td>
       <td>
         {{ props.item.rating.value }}
         ({{ props.item.rating.count }})
