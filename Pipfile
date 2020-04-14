@@ -11,4 +11,4 @@ verify_ssl = true
 python_version = "3.7"
 
 [scripts]
-test = "python -m unittest chapter_*"
+test = "python -m unittest discover chapter_01"
