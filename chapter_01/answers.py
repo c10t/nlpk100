@@ -1,5 +1,5 @@
 import re
-from typing import Dict, List
+from typing import Dict, List, Sequence
 
 def q00(s: str) -> str:
     return s[::-1]
@@ -27,8 +27,13 @@ def q04(text: str) -> Dict[str, int]:
     return char_to_position
 
 
-def q05():
-    pass
+def q05(seq: Sequence, word_bigram=False) -> List[str]:
+    if word_bigram and isinstance(seq, str):
+        words = seq.split()
+        return [(words[i], words[i + 1]) for i in range(len(words)) if i < len(words) - 1]
+    else:
+        return [(seq[i], seq[i + 1]) for i in range(len(seq)) if i < len(seq) - 1]
+
 
 def q06():
     pass

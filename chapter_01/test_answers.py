@@ -38,6 +38,19 @@ class TestChapter01(unittest.TestCase):
         for (k, v) in expect.items():
             self.assertTrue((k, v) in result.items(), f"{k}:{v} is not found")
 
+    def test_q05(self):
+        result_word_bigram = q05("I am an NLPer", True)
+        expect_word_bigram = [("I", "am"), ("am", "an"), ("an", "NLPer")]
+        self.assertEqual(result_word_bigram, expect_word_bigram)
+
+        result_char_bigram = q05("I am an NLPer")
+        expect_char_bigram = [
+            ('I', ' '), (' ', 'a'), ('a', 'm'), ('m', ' '), (' ', 'a'),
+            ('a', 'n'), ('n', ' '), (' ', 'N'), ('N', 'L'), ('L', 'P'),
+            ('P', 'e'), ('e', 'r')
+        ]
+        self.assertEqual(result_char_bigram, expect_char_bigram)
+
 
 if __name__ == '__main__':
     unittest.main()
